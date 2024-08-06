@@ -32,12 +32,13 @@ pipeline {
       post {
         success {
             sh 'echo Success'
-            //office365ConnectorSend message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful", status: 'Success'
         }
         failure {
             sh 'echo Failure'
-            //office365ConnectorSend message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful", status: 'Success'
         }
+      }
+      steps {
+        sh 'echo Success'
       }
     }
   }
