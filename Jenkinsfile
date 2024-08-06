@@ -58,10 +58,6 @@ EOF'''
       recordIssues enabledForFailure: true, tool: cpd(pattern: '**/build/reports/cpd/*.xml')
     }
   }
-  environment {
-    SONAR_HOST_URL = credentials('SONAR_HOST_URL')
-    SONAR_LOGIN_TOKEN = credentials('SONAR_LOGIN_TOKEN')
-  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '7'))
   }
