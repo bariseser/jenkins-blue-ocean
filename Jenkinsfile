@@ -31,11 +31,12 @@ pipeline {
       }
       post {
         success {
-          slackSend(channel: '#deploy', color: 'good', message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful")
+            sh 'echo Success'
+            //office365ConnectorSend message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful", status: 'Success'
         }
-
         failure {
-          slackSend(channel: '#deploy', color: 'danger', message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed")
+            sh 'echo Failure'
+            //office365ConnectorSend message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful", status: 'Success'
         }
 
       }
@@ -43,7 +44,7 @@ pipeline {
         sh '''bash <<EOF
           #!/bin/bash
           echo TBD
-EOF'''
+          EOF'''
       }
     }
   }
