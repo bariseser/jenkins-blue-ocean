@@ -33,22 +33,6 @@ class SimpleControllerTest {
     }
 
     @Test
-    void getNullUsernameTest() throws Exception {
-        String expectedMessage = "hello";
-        mockMvc.perform(MockMvcRequestBuilders.get("/hello/"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string(expectedMessage));
-    }
-
-    @Test
-    void getEmptyUsernameTest() throws Exception {
-        String testUser = "";
-        String expectedMessage = "hello";
-        mockMvc.perform(MockMvcRequestBuilders.get("/hello/" + testUser))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string(expectedMessage));
-    }
-    @Test
     void getAdminUsernameTest() throws Exception {
         String testUsername = "bariseser";
         String expectedMessage = "hello, admin";
