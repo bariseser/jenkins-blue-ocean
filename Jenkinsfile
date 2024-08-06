@@ -38,13 +38,6 @@ pipeline {
             sh 'echo Failure'
             //office365ConnectorSend message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful", status: 'Success'
         }
-
-      }
-      steps {
-        sh '''bash <<EOF
-          #!/bin/bash
-          echo TBD
-          EOF'''
       }
     }
   }
