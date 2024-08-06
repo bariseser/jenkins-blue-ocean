@@ -14,6 +14,14 @@ public class SimpleController {
 
     @GetMapping("hello/{username}")
     public String getHelloMessage(@PathVariable String username) {
+        if (username == null || username.isEmpty()) {
+            return "hello";
+        }
+
+        if (username.equals("bariseser")) {
+            return "hello, admin";
+        }
+
         return String.format("hello, %s", username);
     }
 }
